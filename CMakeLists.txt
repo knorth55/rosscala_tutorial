@@ -22,6 +22,12 @@ catkin_rosjava_setup(installApp)
 
 catkin_package()
 
+add_custom_command(OUTPUT ${PROJECT_SOURCE_DIR}/rosscala_tutorial_pubsub/bin/execute
+  DEPENDS ${PROJECT_SOURCE_DIR}/rosscala_tutorial_pubsub/build.gradle
+  COMMAND ../gradlew deployApp
+  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/rosscala_tutorial_pubsub/)
+add_custom_target(link_execute ALL
+  DEPENDS ${PROJECT_SOURCE_DIR}/rosscala_tutorial_pubsub/bin/execute)
 ##############################################################################
 # Installation
 ##############################################################################
