@@ -42,3 +42,24 @@ tasks.withType(ScalaCompile) {
     scalaCompileOptions.additionalParameters = ['-unchecked','-deprecation','-feature']
     scalaCompileOptions.useAnt = false
 }
+
+/*
+ * http://answers.ros.org/question/145461/can-i-roslaunch-a-rosjava-node/
+ * Create a deploy task to make an executable named "execute",
+ * that can be used from the roslaunch .launch files.
+ * To run this from this directory, do:
+ * ../gradlew deployApp
+ *
+ * see: https://code.google.com/p/rosjava/issues/detail?id=140
+ */
+task deployApp(dependsOn: 'installApp') << {
+  File binDir = new File(project.projectDir, '/bin')
+  if (! binDir.isDirectory()) {
+    println "Creating $binDir directory"
+    binDir.mkdirs()
+  }
+  File link = new File(binDir,"execute")
+  File target = new File(project.projectDir, "build/install/$project.name/bin/$project.name")
+  println "Creating symlink from $link.absolutePath to $target.absolutePath"
+  ant.symlink(link: link.absolutePath, resource: target.absolutePath, overwrite: true)
+}

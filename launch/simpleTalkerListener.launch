@@ -1,0 +1,4 @@
+<launch>
+    <node name="simple_talker" pkg="rosscala_tutorial" type="execute" args="com.github.rosscala_tutorial.rosscala_tutorial_pubsub.Talker" output="screen"/>
+    <node name="simple_listener" pkg="rosscala_tutorial" type="execute" args="com.github.rosscala_tutorial.rosscala_tutorial_pubsub.Listener" output="screen"/>
+</launch>
