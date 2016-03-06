@@ -30,7 +30,7 @@ allprojects {
       A github url provides a good standard unique name for your project
       Example below, but you may wish to switch to your own unique url.
     */
-    group 'com.github.rosjava.rosscala_tutorial'
+    group 'com.github.rosscala_tutorial'
     version = project.catkin.pkg.version
 }
 

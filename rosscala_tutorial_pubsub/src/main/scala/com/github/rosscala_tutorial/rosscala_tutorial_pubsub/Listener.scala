@@ -1,4 +1,4 @@
-package com.github.rosjava.rosscala_tutorial.rosscala_tutorial_pubsub
+package com.github.rosscala_tutorial.rosscala_tutorial_pubsub
 
 import org.ros.message.MessageListener
 import org.ros.node.AbstractNodeMain
