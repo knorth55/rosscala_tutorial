@@ -66,4 +66,4 @@ subprojects {
   If you're using catkin_make, this is not important, since it will use the task list specified
   in CMakeLists.txt
 */
-defaultTasks 'installApp'
+defaultTasks 'publishMavenJavaPublicationToMavenRepository','installApp'
